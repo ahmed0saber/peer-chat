@@ -17,6 +17,18 @@ Perfect for quick, secure conversations or as a foundation for more complex P2P
 applications. Simply share your ID, connect with a peer, and start chatting
 instantly.
 
+## TURN server
+
+This project uses a free TURN server with quota usage of 500MB from Metered:
+
+https://dashboard.metered.ca/turnserver/app/67dbe7d060a12544f83187fb
+
+If you are looking for a self-hosted solution, please check the following resourses:
+
+https://github.com/coturn/coturn
+
+https://github.com/Atlantis-Software/node-turn
+
 ## Disclaimer
 
 This project was developed with the support of AI tools to boost productivity
