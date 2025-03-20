@@ -17,11 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let myId = null;
     let connected = false;
 
+    const getIceServers = async () => {
+        // Calling the REST API TO fetch the TURN Server Credentials
+        const response =
+            await fetch("https://ahmed0saber.metered.live/api/v1/turn/credentials?apiKey=d9de385a43810895240e9abce6377e2684df");
+
+        // Saving the response in the iceServers array
+        const iceServers = await response.json();
+
+        return iceServers;
+    }
+
     // Initialize PeerJS
-    function initializePeer() {
+    async function initializePeer() {
         try {
+            const iceServers = await getIceServers();
             peer = new Peer({
-                debug: 2
+                config: { iceServers },
             });
 
             peer.on('open', (id) => {
