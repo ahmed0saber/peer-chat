@@ -223,7 +223,7 @@ h1 {
 
 @media (max-width: 600px) {
     .container {
-        height: 100vh;
+        height: 100svh;
         max-width: 100%;
         border-radius: 0;
     }
