@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>PeerChat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel='stylesheet' href='./style.css'>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>PeerChat</h1>
+            <div id="status" class="status offline">Offline</div>
+            <div id="my-id-container">
+                <span>Your ID: </span>
+                <span id="my-peer-id">Generating...</span>
+                <button id="copy-id" title="Copy ID"><i class="fas fa-copy"></i></button>
+            </div>
+        </header>
+
+        <div class="connection-panel">
+            <input type="text" id="peer-id-input" placeholder="Enter Peer ID to connect" />
+            <button id="btn-connect" class="btn primary">Connect</button>
+            <button id="btn-disconnect" class="btn secondary" disabled>Disconnect</button>
+        </div>
+
+        <div class="chat-container">
+            <div id="messages" class="messages">
+                <div class="welcome-message">
+                    <p>Welcome to PeerChat!</p>
+                    <p>Connect with a peer to start chatting.</p>
+                </div>
+            </div>
+            <div class="message-input-container">
+                <input type="text" id="message-input" placeholder="Type your message..." disabled />
+                <button id="btn-send" class="btn primary" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src='./script.js'></script>
+</body>
+
+</html>
